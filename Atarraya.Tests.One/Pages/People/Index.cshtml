@@ -1,0 +1,38 @@
+﻿@page "/people"
+@model Atarraya.Tests.One.Pages.People.IndexModel
+@{
+    ViewData["Title"] = "Personas";
+}
+
+<partial name="People/_MessageViewer" model="Model.LastResult" />
+<a asp-page="/People/Add" class="btn btn-primary"><i class="fas fa-plus"></i> Nueva persona</a>
+<table id="people" class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido paterno</th>
+            <th>Apellido materno</th>
+            <th>Fecha de nacimiento</th>
+            <th>Estado de nacimiento</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var person in Model.People)
+        {
+            <tr>
+                <td>@person.FirstName</td>
+                <td>@person.FatherLastName</td>
+                <td>@person.MotherLastName</td>
+                <td>@person.BirthDate</td>
+                <td>@person.BirthState</td>
+                <td>
+                    <form method="post" asp-page-handler="delete">
+                        <input type="hidden" name="personId" value="@person.PersonId" />
+                        <button class="btn btn-link text-danger"><i class="fas fa-trash"></i></button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

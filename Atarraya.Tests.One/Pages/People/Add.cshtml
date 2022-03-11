@@ -1,0 +1,69 @@
+﻿@page "/people/add"
+@model Atarraya.Tests.One.Pages.People.AddModel
+@{
+    ViewData["Title"] = "Nueva persona";
+}
+
+<partial name="People/_MessageViewer" model="Model.LastResult" />
+<form method="post">
+    <div class="mb-3">
+        <label for="firstname" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="firstname" name="firstname" aria-describedby="firstnameHelp" required/>
+        <div id="firstnameHelp" class="form-text">Introduce tu nombre o nombres.</div>
+    </div>
+    <div class="mb-3">
+        <label for="fatherLastname" class="form-label">Apellido paterno</label>
+        <input type="text" class="form-control" id="fatherLastname" name="fatherLastname" aria-describedby="fatherLastnameHelp" required/>
+        <div id="fatherLastnameHelp" class="form-text">Introduce tu apellido paterno.</div>
+    </div>
+    <div class="mb-3">
+        <label for="motherLastname" class="form-label">Apellido materno</label>
+        <input type="text" class="form-control" id="motherLastname" name="motherLastname" aria-describedby="motherLastnameHelp" required/>
+        <div id="motherLastnameHelp" class="form-text">Introduce tu apellido materno.</div>
+    </div>
+    <div class="mb-3">
+        <label for="birthDate" class="form-label">Fecha de nacimiento</label>
+        <input type="date" class="form-control" id="birthDate" name="birthDate" aria-describedby="birthDateHelp" required/>
+        <div id="birthDateHelp" class="form-text">Selecciona tu fecha de nacimiento.</div>
+    </div>
+    <div class="mb-3">
+        <label for="birthState" class="form-label">Estado de nacimiento</label>
+        <select class="form-control" id="birthState" name="birthState" aria-describedby="birthStateHelp" required>
+            <option value='AGU'>Aguascalientes</option>
+            <option value='BCN'>Baja California</option>
+            <option value='BCS'>Baja California Sur</option>
+            <option value='CAM'>Campeche</option>
+            <option value='CHP'>Chiapas</option>
+            <option value='CHH'>Chihuahua</option>
+            <option value='CMXC​'>Ciudad de México</option>
+            <option value='COA'>Coahuila</option>
+            <option value='COL'>Colima</option>
+            <option value='DUR'>Durango</option>
+            <option value='GUA'>Guanajuato</option>
+            <option value='GRO'>Guerrero</option>
+            <option value='HID'>Hidalgo</option>
+            <option value='JAL'>Jalisco</option>
+            <option value='MEX'>México</option>
+            <option value='MIC'>Michoacán</option>
+            <option value='MOR'>Morelos</option>
+            <option value='NAY'>Nayarit</option>
+            <option value='NLE'>Nuevo León</option>
+            <option value='OAX'>Oaxaca</option>
+            <option value='PUE'>Puebla</option>
+            <option value='QUE'>Querétaro</option>
+            <option value='ROO'>Quintana Roo</option>
+            <option value='SLP'>San Luis Potosí</option>
+            <option value='SIN'>Sinaloa</option>
+            <option value='SON'>Sonora</option>
+            <option value='TAB'>Tabasco</option>
+            <option value='TAM'>Tamaulipas</option>
+            <option value='TLA'>Tlaxcala</option>
+            <option value='VER'>Veracruz</option>
+            <option value='YUC'>Yucatán</option>
+            <option value='ZAC'>Zacatecas</option>
+        </select>
+        <div id="birthStateHelp" class="form-text">Selecciona tu estado de nacimiento.</div>
+    </div>
+    <button type="submit" class="btn btn-primary" id="save">Guardar</button>
+    <button type="reset" class="btn btn-secondary">Cancelar</button>
+</form>

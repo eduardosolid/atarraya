@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Atarraya.Tests.One.Data;
-using Atarraya.Tests.One.Data.Repositories;
-using Atarraya.Tests.One.Services;
+using WebAPI.Data;
+using WebAPI.Data.Repositories;
+using WebAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +27,7 @@ builder.Services.AddScoped<PeopleService>()
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 var app = builder.Build();
+// la siguiente línea es para permitir escribir el DateTime en el formato que va a Postgres
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 // Configure the HTTP request pipeline.

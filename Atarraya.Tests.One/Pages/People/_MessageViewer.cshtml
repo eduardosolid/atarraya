@@ -1,21 +1,20 @@
-﻿@model Atarraya.Tests.One.Interface.OperationResult
+﻿@model ClassLibrary.Interface.OperationResult
 
 @if (Model != null)
 {
     switch (Model)
     {
-        case Atarraya.Tests.One.Interface.Completions.AddPersonCompleted completed:
+        case ClassLibrary.Interface.Completions.AddPersonCompleted completed:
             <div id="result" class="alert alert-success" role="alert">
                 Persona @completed.AddedPerson.PersonId creada correctamente.
             </div>
             break;
 
-        case Atarraya.Tests.One.Interface.Rejections.PersonOperationRejected rejected:
+        case ClassLibrary.Interface.Rejections.PersonOperationRejected rejected:
             <div id="result" class="alert alert-danger" role="alert">
-                @Messages.FromErrorCode(rejected.ErrorCode)
+                @ClassLibrary.Constants.Messages.FromErrorCode(rejected.ErrorCode)
             </div>
             break;
     }
-
 }
 

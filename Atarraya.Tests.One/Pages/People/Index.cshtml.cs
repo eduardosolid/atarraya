@@ -1,12 +1,11 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Atarraya.Tests.One.Interface;
-using Atarraya.Tests.One.Interface.Commands;
-using Atarraya.Tests.One.Interface.Completions;
-using Atarraya.Tests.One.Interface.Rejections;
-using Atarraya.Tests.One.Models;
-using Atarraya.Tests.One.Services;
+using ClassLibrary.Interface;
+using ClassLibrary.Interface.Commands;
+using ClassLibrary.Interface.Completions;
+using ClassLibrary.Models;
+using WebAPI.Services;
 
 namespace Atarraya.Tests.One.Pages.People
 {

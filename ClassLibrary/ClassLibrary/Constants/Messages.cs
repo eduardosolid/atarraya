@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Atarraya.Tests.One.Constants
+namespace ClassLibrary.Constants
 {
     public static class Messages
     {
         public static string FromErrorCode(PersonErrorCode errorCode)
         {
-            var er = errorCode switch
+            return errorCode switch
             {
                 PersonErrorCode.Unknown => "Error desconocido.",
                 PersonErrorCode.PersonAlreadyExists => "Esta persona ya ha sido registrada.",
@@ -18,7 +18,6 @@ namespace Atarraya.Tests.One.Constants
                 PersonErrorCode.PersonNotFound => "La persona especificada no existe.",
                 _ => throw new ArgumentOutOfRangeException(nameof(errorCode))
             };
-            return er;
         }
     }
 
